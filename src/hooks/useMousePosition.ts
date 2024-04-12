@@ -8,6 +8,7 @@ export function useMousePosition() {
 		y: 0,
 	})
 	const [speed, setSpeed] = useState({ x: 0, y: 0 })
+	const [smoothSpeed, setSmoothSpeed] = useState({ x: 0, y: 0 })
 
 	useEffect(() => {
 		function handleMouseMove(e: MouseEvent) {
@@ -30,11 +31,19 @@ export function useMousePosition() {
 	}, [])
 
 	useRaf((elapsed) => {
-		setSpeed(prev => ({
-			x: prev.x * 0.03 * elapsed,
-			y: prev.y * 0.03 * elapsed,
-		}))
+		setSpeed((prev) => {
+			const newSpeed = {
+				x: prev.x * 0.1 * elapsed,
+				y: prev.y * 0.1 * elapsed,
+			}
+			setSmoothSpeed(p => ({
+				x: p.x + (newSpeed.x - p.x) * 0.1,
+				y: p.y + (newSpeed.y - p.y) * 0.1,
+			}))
+
+			return newSpeed
+		})
 	})
 
-	return { pos, speed }
+	return { pos, speed, smoothSpeed }
 }

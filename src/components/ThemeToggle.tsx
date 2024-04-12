@@ -5,10 +5,8 @@ export function ThemeToggle() {
 	const [isDark, setIsDark] = useState(false)
 
 	useEffect(() => {
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches)
 			setIsDark(true)
-			document.documentElement.classList.add('dark')
-		}
 	}, [])
 
 	function toggleTheme() {
@@ -18,16 +16,11 @@ export function ThemeToggle() {
 	return (
 		<button
 			onClick={toggleTheme}
-			className="fixed top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-500
-			hover:bg-opacity-75 transition"
+			className="fixed right-4 top-4 rounded-full bg-gray-200 p-2 transition
+			hover:bg-gray-200/75 dark:bg-gray-500"
 		>
-			{isDark
-				? (
-					<Moon className="w-6 h-6 text-slate-200" />
-					)
-				: (
-					<Sun className="w-6 h-6 text-yellow-500" />
-					)}
+			<Moon className="hidden size-6 text-slate-200 dark:block" />
+			<Sun className="size-6 text-yellow-500 dark:hidden " />
 		</button>
 	)
 }

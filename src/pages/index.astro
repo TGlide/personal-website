@@ -39,6 +39,12 @@ import { Link, Test } from '@components/Link.tsx'
     <link rel="stylesheet" href="/fonts/gt-super.css" />
 
     <title>Hi, I'm Thomas!</title>
+
+    <script>
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
   <body class="relative bg-white !pb-32 text-neutral-800 dark:bg-neutral-900 dark:text-white">
     <ThemeToggle client:load />
@@ -166,6 +172,6 @@ import { Link, Test } from '@components/Link.tsx'
       </p>
     </article>
 
-    <ReactWork client:load />
+    <ReactWork client:only="react" />
   </body>
 </html>

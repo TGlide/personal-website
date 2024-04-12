@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import { pluralize } from '@helpers/string'
 	import { onMount } from 'svelte'
-	import { fade, slide } from 'svelte/transition'
+	import { fade } from 'svelte/transition'
 
 	export let slug: string | undefined
 
@@ -37,22 +37,6 @@
 
 		return { update }
 	}
-
-	function slideAndFade(node: HTMLElement) {
-		const duration = 200
-		const _slide = slide(node, { duration, axis: 'x' })
-		const _fade = fade(node, { duration })
-
-		return {
-			duration,
-			css: (t: number, u: number) => {
-				const fadeCss = _fade.css?.(t, u)
-				const slideCss = _slide.css?.(t, u).replace(/opacity:(.*?);/gm, '')
-
-				return `${fadeCss}; ${slideCss}`
-			},
-		}
-	}
 </script>
 
 <div class='mt-2 text-xs opacity-75'>
@@ -71,7 +55,7 @@
 				{/if}
 			{/each}
 		</div>
-		<span>{pluralize('view', views)}</span>
+		<span transition:fade>{pluralize('view', views)}</span>
 	{:else}
 		<!-- Just to avoid CLS :) -->
 		<span aria-hidden class='opacity-0 select-none'>JOHN CEEEEENA</span>

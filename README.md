@@ -5,6 +5,7 @@ This is my personal website. It's built in Astro, Tailwind, MDX, and a sprinkle 
 ## Ideas
 
 - [ ] Easter eggs!
-- [ ] View count on articles
+- [X] View count on articles
 - [ ] TOC (Maybe akin to Rauno's bird-eye view)
-- [ ] IDK
+- [ ] Animated SVG signature path
+- [ ] Open-source video showcasing website

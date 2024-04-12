@@ -1,5 +1,6 @@
 import { useMousePosition } from '@hooks/useMousePosition'
 import { useRect } from '@hooks/useRect'
+import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
 interface MouseFollowerProps {

@@ -1,7 +1,8 @@
 # Hi, I'm Thomas
 
-- [ ] Theme FUOC fix
+- [X] Theme FUOC fix
 - [ ] React work
-- [ ] Video
-- [ ] Carousel on larger screens
+- [X] Video
+- [X] Carousel on larger screens
 - [ ] Responsiveness
+- [ ] Fix mouse follow bb rect miscalculation

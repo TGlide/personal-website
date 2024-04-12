@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 export function Hero() {
 	return (
 		<div
-			className="relative mx-auto flex max-w-[630px] flex-col justify-end px-4 pt-32 font-serif
+			className="relative mx-auto flex max-w-[655px] flex-col justify-end px-4 pt-32 font-serif
 			xl:container xl:h-[800px] xl:pt-0"
 		>
 			<AnimatedText className="text-6xl font-black xl:text-[15rem]" text="Hi." tag="h1" />

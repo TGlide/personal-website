@@ -11,7 +11,7 @@ interface MouseFollowerProps {
 }
 
 export function MouseFollower({ offset, children, className, transformOrigin = 'center' }: MouseFollowerProps) {
-	const { pos, smoothSpeed, speed } = useMousePosition()
+	const { pos, smoothSpeed } = useMousePosition()
 	const { ref, rect } = useRect<HTMLDivElement>()
 
 	return createPortal(

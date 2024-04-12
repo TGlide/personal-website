@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useEventListener } from 'usehooks-ts'
-import { usePrevious } from './usePrevious'
 import { useRaf } from './useRaf'
 
 export function useMousePosition() {
@@ -24,13 +23,8 @@ export function useMousePosition() {
 		})
 	}, documentRef)
 
-	useRaf((elapsed) => {
+	useRaf(() => {
 		setSpeed((prev) => {
-			// When one second has passed, the speed should be halved.
-			// So in each millisecond, the speed should be multiplied by 1 - 1/1000.
-			const MULT_PER_SEC = 1 - 1 / 1000
-			const secsElapsed = elapsed / 1000
-
 			const newSpeed = {
 				x: prev.x * 0.5,
 				y: prev.y * 0.5,

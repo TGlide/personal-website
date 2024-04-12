@@ -8,6 +8,7 @@ export function useRaf(cb: (elapsed: number) => void) {
 			const now = performance.now()
 			const elapsed = now - lastTime
 			lastTime = now
+
 			cb(elapsed)
 			raf = requestAnimationFrame(tick)
 		}

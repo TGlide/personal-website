@@ -28,7 +28,8 @@
     "react-dom": "^18.2.0",
     "svelte": "^4.2.12",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "usehooks-ts": "^3.0.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.8.3",

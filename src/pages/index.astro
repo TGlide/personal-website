@@ -1,16 +1,8 @@
 ---
 import { Hero } from '@sections/Hero'
-import {
-	SiReact,
-	SiSvelte,
-	SiTailwindcss,
-} from '@icons-pack/react-simple-icons'
-import Combobox from '@components/Combobox.svelte'
-import { ReactWork } from '@sections/ReactWork'
-// import { ThemeToggle } from '@components/ThemeToggle'
 import { Link } from '@components/Link.tsx'
+import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react'
 ---
-
 <html lang="en" class="dark" style="color-scheme: dark;">
 	<head>
 		<meta charset="utf-8" />
@@ -46,132 +38,149 @@ import { Link } from '@components/Link.tsx'
 			}
 		</script> -->
 	</head>
-	<body class="relative bg-white !pb-32 text-neutral-800 dark:bg-neutral-900 dark:text-white">
+	<body class="relative bg-neutral-900  !pb-32 text-white">
 		<!-- <ThemeToggle client:load /> -->
 
 
 		<!-- <Hero client:load /> -->
 		<Hero client:load />
 		<article
-			class="container prose mt-32 dark:prose-invert prose-h1:font-serif
-					prose-h2:font-serif prose-h3:font-serif prose-p:font-semibold prose-em:font-light"
+			class="container prose prose-invert mt-32 prose-h1:font-serif
+			prose-h2:font-serif prose-h3:font-serif prose-p:font-semibold prose-a:no-underline
+			prose-em:font-serif prose-em:font-light"
 		>
-			<p>
-				If you're reading this, you're looking at my application for the Design
-				Engineer role at
-				<SiTailwindcss className="ml-0.5 inline-block size-5 text-[#06B6D4]" /> Tailwind
-				Labs, and may (hopefully) be thinking of hiring me.
-				<br /><br />
-				In any case, it'd be rude not to introduce myself properly!
-			</p>
-
-			<h2>Who am I?</h2>
+			<h2>Who am I</h2>
 
 			<p>
-				My name is <em>Thomas G. Lopes</em>, I'm a 24 y/o
-				<span class="line-through">nerd</span> developer based in
-				<em>Portugal</em>.
-			</p>
-
-			<p>
-				I live with my girlfriend, and two cats we rescued near our home.
+				Still figuring it out. In the meanwhile, I assume many roles and titles.
 				<br />
-				<em>(Pro #1, if you hire me, plenty of cat pictures 🐱)</em>
-			</p>
-
-			<p>
-				I have way too many hobbies that I unequally distribute my time between,
-				such as playing guitar 🎸, gaming 🎮, and jumping way too much in metal
-				concerts.
+				<em>Web Developer</em>, <em>OSS Maintainer</em>, <em>Designer</em>, <em>Docs Writer</em>,
+				<em>Speaker</em>, <em>etc.</em>
 				<br />
-				<em>(Pro #2, one more person to watch Slayer play!)</em>
 				<br />
-				<em>(...if they ever come out of retirement)</em>
+				Through my passion, I've been fortunate to become a <em>Svelte ambassador</em>,
+				work with inspiring companies such as <em>V7</em>, <em>Appwrite</em>, and <em>Significa</em>,
+				and meet my heroes both online and personally.
+				<br />
+				<br />
+				I'm trying to put my work out there, both to leave my mark,
+				and to try and make world a <em>tiny</em> bit better with it. I've put some of it below.
+
 			</p>
 
-			<!-- <p>
-				I didn't always think I'd be a developer. I've wanted to be an
-				astronaut, a chef, a doctor, you name it. But one day a funny idea
-				popped into my head that, hey, since I love computers so much, maybe
-				it'd be interesting to learn how to make them do things. And so I did.
-			</p> -->
+			<h2>Projects</h2>
+			<ul>
+				<li>
+					<h3>
+						<Link
+							client:only="react"
+							img="images/melt-ui.png"
+							href="https://melt-ui.com/"
+							className="transition-all hover:opacity-75"
+						>
+							<span class="inline-flex items-center gap-1 ">
+								<span class="relative inline-block after:absolute after:bottom-[4px]
+								after:left-1/2 after:z-[-1] after:h-1 after:w-full after:-translate-x-1/2
+								after:border-b-[6px] after:border-[hsla(34.016,91.598%,65.164%,0.5)]"
+								>
+								Melt UI
+								</span>
+								<ArrowUpRight className="size-4" />
+							</span>
+						</Link>
+					</h3>
+					<p>
+						The biggest headless UI library for Svelte, providing accessible & composable
+						component builders.
+					</p>
+				</li>
+				<li>
+					<h3>
+						<Link
+							client:only="react"
+							img="images/radix-svelte.png"
+							href="https://radix-svelte.com/"
+							className="transition-all hover:opacity-75"
+						>
+							<span class="inline-flex items-center gap-1 ">
+								<span class="relative inline-block after:absolute after:bottom-[4px]
+								after:left-1/2 after:z-[-1] after:h-1 after:w-full after:-translate-x-1/2
+								after:border-b-[6px] after:border-[hsla(14.864,100%,49.771%,0.5)]"
+								>
+								Radix Svelte
+								</span>
+								<ArrowUpRight className="size-4" />
+							</span>
+						</Link>
+					</h3>
+					<p>
+						The original port of Radix UI for Svelte. Won 3rd place at SvelteHack.<br />
+						The work done here later inspired Melt UI.
+					</p>
+				</li>
+				<li>
+					<h3>
+						<Link
+							client:only="react"
+							img="images/novel-svelte.png"
+							href="https://novel-svelte-thomasglopes.vercel.app/"
+							className="transition-all hover:opacity-75"
+						>
+							<span class="inline-flex items-center gap-1 ">
+								<span class="relative inline-block after:absolute after:bottom-[4px]
+								after:left-1/2 after:z-[-1] after:h-1 after:w-full after:-translate-x-1/2
+								after:border-b-[6px] after:border-[hsla(0,0%,50%,0.5)]"
+								>
+									Novel Svelte
+								</span>
+								<ArrowUpRight className="size-4" />
+							</span>
+						</Link>
+					</h3>
+					<p>
+						A port of Steven Tey's library, Novel, to Svelte. It's a Notion-style
+						WYSIWYG editor, with AI-powered features.
+					</p>
+				</li>
+			</ul>
+
+			<h2>Experiments & Toys</h2>
+
+			<h2>Socials</h2>
 
 			<p>
-				I started learning to code when I was 16, grabbing Python books online
-				and hammering at them. I eventually got to college to study Computer
-				Science, but no idea what field I wanted to specialize in.
+				You can find me on
+				<a
+					class="my-0 ml-1 inline-flex translate-y-0.5 items-center font-serif
+					font-light italic underline transition hover:opacity-75"
+					href="https://twitter.com/thomasglopes"
+					target="_blank"
+				>
+						<Twitter className="size-4 text-blue-500" />
+						<span class="ml-1">twitter</span>
+					</a>,
+					<a
+						class="my-0 mr-0.5 inline-flex translate-y-0.5 items-center font-serif
+						font-light italic underline transition hover:opacity-75"
+						href="https://github.com/tglide"
+						target="_blank"
+					>
+					<Github className="size-4 text-gray-500" />
+					<span class="ml-1">github</span>
+				</a>
+				<!-- Linkedin -->
+				or
+				<a
+					class="my-0 ml-1 inline-flex translate-y-0.5 items-center font-serif
+					font-light italic underline transition hover:opacity-75"
+					href="https://www.linkedin.com/in/thomas-gl/"
+					target="_blank"
+				>
+					<Linkedin className="size-4 text-blue-500" />
+					<span class="ml-1">linkedin</span>
+				</a>.
 			</p>
 
-			<p>
-				I just knew it <em>definitely</em> wasn't <em>web development</em>. No
-				way.
-			</p>
 
-			<p>
-				Thing is, I was the only one who gave a crap about how our assignments
-				looked. So, out of moral obligation, I experimented and tried my way
-				until things were shiny and pretty.
-			</p>
-
-			<p>And now here I am.</p>
-
-			<h2>Where are you now, exactly?</h2>
-
-			<p>I'll paint the picture for you. 🎨</p>
-
-			<p>
-				I'm currently working at
-				<Link client:only="react" img="images/v7-labs.png" href="https://v7labs.com/">V7 labs</Link>,
-				one of the largest UK-based startups as a <br /><em>front-end engineer</em>.
-			</p>
-
-			<p>
-				I'm a <SiSvelte className="ml-0.5 inline-block size-5 text-[#FF3E00]" />
-				Svelte ambassador, and also the maintainer of the biggest headless library
-				for Svelte,
-				<Link client:only="react" img="images/melt-ui.png" href="https://melt-ui.com/">Melt UI</Link>.
-			</p>
-
-			<Combobox client:load />
-			<p class="!mt-2 opacity-75">
-				<em class="font-serif">
-					A recreation of Headless UI's Combobox component in Svelte, using Melt
-					UI
-				</em>
-			</p>
-
-			<p>
-				It's one of my most proud achievements throughout my career, and
-				definitely my most challenging one. With it, I became a <em>leader</em>,
-				a <em>writer</em>, a <em>designer</em>, a <em>public speaker</em>, you
-				name it.
-			</p>
-
-			<p>It's incredibly taxing, but also incredibly rewarding.</p>
-
-			<h3>Wait, so you're a Svelte developer?</h3>
-
-			<p>
-				Not exactly. I'm a <em>web developer</em> first and foremost. I fell in love
-				with the web, and my passion lies in making it a better place. I just use
-				the tools that suit me best.
-			</p>
-
-			<p>
-				I've used
-				<SiReact className="ml-0.5 inline-block size-5 text-[#61DAFB]" /> React extensively,
-				and I'm always tinkering with different frameworks. One of my goals is to
-				build an agnostic headless library
-				<em>(that also works in vanilla JS, unlike existing solutions)</em>, and
-				as such, diving deep into different frameworks is a regular occurrence
-				for me.
-			</p>
-
-			<p>
-				In fact, most of my work experience has been in React. Check it out.
-			</p>
-		</article>
-
-		<ReactWork client:only="react" />
 	</body>
 </html>

@@ -74,7 +74,7 @@ export function WorkItem({
 							</div>
 							)
 						: null}
-					<article className="prose mt-8 dark:prose-invert prose-p:font-semibold">
+					<article className="prose prose-invert mt-8 prose-p:font-semibold">
 						{children}
 					</article>
 				</div>

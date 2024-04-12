@@ -1,6 +1,6 @@
 ---
 import Hero from '@sections/Hero.svelte'
-import { Link } from '@components/Link.tsx'
+import Link from '@components/Link.svelte'
 import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react'
 ---
 <html lang="en" class="dark" style="color-scheme: dark;">
@@ -64,7 +64,7 @@ import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react'
 				<li>
 					<h3>
 						<Link
-							client:only="react"
+							client:only="svelte"
 							img="images/melt-ui.png"
 							href="https://melt-ui.com/"
 							className="transition-all hover:opacity-75"
@@ -88,7 +88,7 @@ import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react'
 				<li>
 					<h3>
 						<Link
-							client:only="react"
+							client:only="svelte"
 							img="images/radix-svelte.png"
 							href="https://radix-svelte.com/"
 							className="transition-all hover:opacity-75"
@@ -112,7 +112,7 @@ import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react'
 				<li>
 					<h3>
 						<Link
-							client:only="react"
+							client:only="svelte"
 							img="images/novel-svelte.png"
 							href="https://novel-svelte-thomasglopes.vercel.app/"
 							className="transition-all hover:opacity-75"

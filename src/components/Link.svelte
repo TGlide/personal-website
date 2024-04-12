@@ -1,0 +1,44 @@
+<script lang='ts'>
+	import { withEventListener } from '@withers/withEventListener'
+	import MouseFollower from './MouseFollower.svelte'
+
+	export let img: string
+	let className: string
+	export { className as class }
+	export let href: string
+
+	let isHovering = false
+	let el: HTMLAnchorElement
+
+	withEventListener(window, 'scroll', () => {
+		isHovering = false
+	})
+</script>
+
+<a
+	class={className}
+	on:mousemove={() => (isHovering = true)}
+	on:mouseleave={() => (isHovering = false)}
+	on:click={() => (isHovering = false)}
+	{href}
+	target='_blank'
+	bind:this={el}
+>
+	<slot />
+</a>
+<MouseFollower
+	class='pointer-events-none'
+	offset={{ y: -140 }}
+	transformOrigin='bottom'
+>
+	<div
+		class='pointer-events-none h-[240px] w-[400px]
+			overflow-hidden rounded-xl border  border-neutral-600 bg-neutral-800
+			p-1.5 shadow-xl transition-all duration-300'
+		style:clip-path={isHovering ? 'inset(0% 0% 0% 0% round 10px)' : 'inset(90% 50% 10% 50% round 10px)'}
+		style:transition-duration={isHovering ? '0.2s' : '0.1s'}
+
+	>
+		<img src={img} alt="" class='size-full rounded-lg object-cover' />
+	</div>
+</MouseFollower>

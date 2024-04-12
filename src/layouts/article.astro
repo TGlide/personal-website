@@ -14,11 +14,13 @@ const { frontmatter } = Astro.props
 ---
 
 <Base title={frontmatter.title} description={frontmatter.description}>
-	<Prose class="pt-16">
+	<Prose class="pt-16 prose-a:!underline prose-a:transition [&_a:hover]:opacity-75">
 		<a class="inline-flex items-center gap-2 transition hover:opacity-75" href="/">
 			<Undo2 size={16} />
 			<span class="translate-y-px font-serif font-light">Back</span>
 		</a>
-		<h1 class="mt-4">{frontmatter.title}</h1>
+		<h1 class="mb-0 mt-4">{frontmatter.title}</h1>
+		<p class="mt-2 opacity-75">{frontmatter.description}</p>
+		<slot />
 	</Prose>
 </Base>

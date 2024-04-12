@@ -14,6 +14,8 @@ interface Props {
 const { frontmatter } = Astro.props
 const slug = Astro.params.slug
 const views = await getViews(slug)
+
+export const prerender = false
 ---
 
 <Base title={frontmatter.title} description={frontmatter.description}>

@@ -2,6 +2,8 @@ import type { APIRoute } from 'astro'
 import { getCollection } from 'astro:content'
 import { PostMeta, db, eq, sql } from 'astro:db'
 
+export const prerender = false
+
 export async function getStaticPaths() {
 	const articles = await getCollection('articles')
 	return articles.map(({ slug }) => ({

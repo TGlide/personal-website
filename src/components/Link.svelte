@@ -37,6 +37,7 @@
 			p-1.5 shadow-xl transition-all duration-300'
 		style:clip-path={isHovering ? 'inset(0% 0% 0% 0% round 10px)' : 'inset(90% 50% 10% 50% round 10px)'}
 		style:transition-duration={isHovering ? '0.2s' : '0.1s'}
+		style:transition-delay={isHovering ? '0.05s' : '0s'}
 
 	>
 		<img src={img} alt="" class='size-full rounded-lg object-cover' />

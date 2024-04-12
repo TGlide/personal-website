@@ -1,10 +1,9 @@
 ---
 import Socials from '@components/socials.astro'
+import ViewCounter from '@components/view-counter.svelte'
 import type { Article } from '@content/config'
 import { formatDate } from '@helpers/date'
 
-import { getViews } from '@helpers/get-views'
-import { pluralize } from '@helpers/string'
 import Base from './base.astro'
 import Undo2 from '~icons/lucide/undo-2'
 
@@ -13,9 +12,6 @@ interface Props {
 }
 const { frontmatter } = Astro.props
 const slug = Astro.params.slug
-const views = await getViews(slug)
-
-export const prerender = false
 ---
 
 <Base title={frontmatter.title} description={frontmatter.description}>
@@ -35,7 +31,7 @@ export const prerender = false
       <h1 class="mb-0 mt-4">{frontmatter.title}</h1>
       <p class="my-2 opacity-75">{frontmatter.description}</p>
 			<p class="mb-0 mt-1 text-xs opacity-75">Published on {formatDate(frontmatter.publishDate)}</p>
-			<p class="mt-2 text-xs opacity-75">{views} {pluralize('view', views)}</p>
+			<ViewCounter client:load slug={slug} />
     </header>
     <main>
       <slot />

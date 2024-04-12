@@ -3,12 +3,17 @@ import Socials from '@components/socials.astro'
 import type { Article } from '@content/config'
 import { formatDate } from '@helpers/date'
 import { Undo2 } from 'lucide-react'
+
+import { getViews } from '@helpers/get-views'
+import { pluralize } from '@helpers/string'
 import Base from './base.astro'
 
 interface Props {
   frontmatter: Article
 }
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props
+const slug = Astro.params.slug
+const views = await getViews(slug)
 ---
 
 <Base title={frontmatter.title} description={frontmatter.description}>
@@ -27,7 +32,8 @@ const { frontmatter } = Astro.props;
       </a>
       <h1 class="mb-0 mt-4">{frontmatter.title}</h1>
       <p class="my-2 opacity-75">{frontmatter.description}</p>
-			<p class="mt-1 text-xs opacity-75">Published on {formatDate(frontmatter.publishDate)}</p>
+			<p class="mb-0 mt-1 text-xs opacity-75">Published on {formatDate(frontmatter.publishDate)}</p>
+			<p class="mt-2 text-xs opacity-75">{views} {pluralize('view', views)}</p>
     </header>
     <main>
       <slot />

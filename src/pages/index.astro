@@ -15,7 +15,7 @@ import NovelImg from '@images/novel-svelte.png'
 ---
 
 <Base>
-  <Hero client:load />
+  <Hero />
   <Prose class="mt-32">
     <h2>Who am I</h2>
 
@@ -41,7 +41,7 @@ import NovelImg from '@images/novel-svelte.png'
       <li>
         <h3>
           <Link
-	client:only="svelte"
+	client:load
 	href="https://melt-ui.com/"
 	class="transition-all hover:opacity-75"
           >
@@ -66,7 +66,7 @@ import NovelImg from '@images/novel-svelte.png'
       <li>
         <h3>
           <Link
-	client:only="svelte"
+	client:load
 	href="https://radix-svelte.com/"
 	class="transition-all hover:opacity-75"
           >
@@ -91,7 +91,7 @@ import NovelImg from '@images/novel-svelte.png'
       <li>
         <h3>
           <Link
-	client:only="svelte"
+	client:load
 	href="https://novel-svelte-thomasglopes.vercel.app/"
 	class="transition-all hover:opacity-75"
           >

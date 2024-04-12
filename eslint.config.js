@@ -10,6 +10,7 @@ export default config({
 		overrides: {
 			'max-len': ['error', { code: 120 }],
 			'antfu/if-newline': 'off',
+			'curly': ['error', 'multi-line'],
 		},
 	},
 },

@@ -1,5 +1,6 @@
 <script lang='ts'>
-	import { withEventListener } from '@withers/withEventListener'
+	import { withEventListener } from '@helpers/withEventListener'
+	import { safeWindow } from '@helpers/safeWindow'
 	import MouseFollower from './mouse-follower.svelte'
 
 	let className: string
@@ -9,7 +10,7 @@
 	let isHovering = false
 	let el: HTMLAnchorElement
 
-	withEventListener(window, 'scroll', () => {
+	withEventListener(safeWindow(), 'scroll', () => {
 		isHovering = false
 	})
 </script>

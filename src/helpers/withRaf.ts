@@ -1,4 +1,6 @@
 export function withRaf(callback: FrameRequestCallback, fps: number = 60) {
+	if (typeof window === 'undefined') return
+
 	let rafId: number
 	let then = performance.now()
 	const interval = 1000 / fps

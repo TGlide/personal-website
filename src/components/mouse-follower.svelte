@@ -1,6 +1,6 @@
 <script lang='ts'>
-	import { withMousePosition } from '@withers/withMousePosition'
-	import { withRect } from '@withers/withRect'
+	import { withMousePosition } from '@helpers/withMousePosition'
+	import { withRect } from '@helpers/withRect'
 	import { portal } from '@actions/portal'
 
 	export let offset: { x?: number, y?: number } = { x: 0, y: 0 }

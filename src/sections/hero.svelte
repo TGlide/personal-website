@@ -33,7 +33,7 @@
 			xl:right-[200px] xl:top-[180px] xl:w-[360px]'
 		data-disable-anim={disableAnim ? '' : undefined}
 	>
-		<img src='/images/me.jpg' alt="Thomas's face" />
+		<slot />
 		<!-- {/* Overlay vignette */} -->
 		<div
 			class='absolute left-0 top-0 size-full

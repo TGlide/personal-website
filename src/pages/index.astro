@@ -9,13 +9,16 @@ import MeltImg from '@images/melt-ui.png'
 import NovelImg from '@images/novel-svelte.png'
 import RadixImg from '@images/radix-svelte.png'
 import { getCollection } from 'astro:content'
+import me from '@images/me.jpg'
 import ArrowUpRight from '~icons/lucide/arrow-up-right'
 
 const articles = await getCollection('articles')
 ---
 
 <Base>
-  <Hero />
+  <Hero>
+		<Image src={me} alt="Thomas's face" />
+	</Hero>
   <main
 	class="container prose prose-invert mt-32 prose-h1:font-serif
 	prose-h2:font-serif prose-h3:font-serif prose-p:font-medium

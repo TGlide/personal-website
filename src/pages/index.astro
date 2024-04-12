@@ -115,15 +115,15 @@ import { Link, Test } from '@components/Link.tsx'
 
       <p>
         I'm currently working at
-        <a href="https://v7labs.com/" target="_blank">V7 labs</a>, one of the
-        largest UK-based startups as a <br /><em>front-end engineer</em>.
+        <Link client:only="react" img="images/v7-labs.png" href="https://v7labs.com/">V7 labs</Link>,
+				one of the largest UK-based startups as a <br /><em>front-end engineer</em>.
       </p>
 
       <p>
         I'm a <SiSvelte className="ml-0.5 inline-block size-5 text-[#FF3E00]" />
         Svelte ambassador, and also the maintainer of the biggest headless library
         for Svelte,
-				<Link client:only="react" img="images/melt-ui.jpeg" href="https://melt-ui.com/">Melt UI</Link>.
+				<Link client:only="react" img="images/melt-ui.png" href="https://melt-ui.com/">Melt UI</Link>.
       </p>
 
       <Combobox client:load />

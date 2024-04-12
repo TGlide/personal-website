@@ -1,4 +1,6 @@
 ---
+import Prose from '@components/prose.astro'
+import { Undo2 } from 'lucide-react'
 import Base from './base.astro'
 
 interface Props {
@@ -12,4 +14,11 @@ const { frontmatter } = Astro.props
 ---
 
 <Base title={frontmatter.title} description={frontmatter.description}>
-	<Article
+	<Prose class="pt-16">
+		<a class="inline-flex items-center gap-2 transition hover:opacity-75" href="/">
+			<Undo2 size={16} />
+			<span class="translate-y-px font-serif font-light">Back</span>
+		</a>
+		<h1 class="mt-4">{frontmatter.title}</h1>
+	</Prose>
+</Base>

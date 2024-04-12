@@ -3,12 +3,17 @@ import Hero from '@sections/hero.svelte'
 import Link from '@components/link.svelte'
 import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react'
 import Base from '@layouts/base.astro'
-import Prose from '@components/prose.astro';
+import Prose from '@components/prose.astro'
+import { Image } from 'astro:assets'
+
+import MeltImg from '@images/melt-ui.png'
+import RadixImg from '@images/radix-svelte.png'
+import NovelImg from '@images/novel-svelte.png'
 ---
 
 <Base>
   <Hero client:load />
-  <Prose>
+  <Prose class="mt-32">
     <h2>Who am I</h2>
 
     <p>
@@ -34,7 +39,6 @@ import Prose from '@components/prose.astro';
         <h3>
           <Link
 	client:only="svelte"
-	img="images/melt-ui.png"
 	href="https://melt-ui.com/"
 	class="transition-all hover:opacity-75"
           >
@@ -48,6 +52,7 @@ import Prose from '@components/prose.astro';
               </span>
               <ArrowUpRight className="size-4" />
             </span>
+						<Image slot="img" src={MeltImg} alt="" />
           </Link>
         </h3>
         <p>
@@ -73,6 +78,7 @@ import Prose from '@components/prose.astro';
               </span>
               <ArrowUpRight className="size-4" />
             </span>
+						<Image slot="img" src={RadixImg} alt="" />
           </Link>
         </h3>
         <p>
@@ -98,6 +104,7 @@ import Prose from '@components/prose.astro';
               </span>
               <ArrowUpRight className="size-4" />
             </span>
+						<Image slot="img" src={NovelImg} alt="" />
           </Link>
         </h3>
         <p>

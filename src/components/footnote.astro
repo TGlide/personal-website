@@ -1,0 +1,13 @@
+---
+interface Props {
+	href: string
+	number: number
+}
+
+const { href, number } = Astro.props
+---
+
+<a
+	class="inline-block -translate-y-2 px-0.5 text-xs font-bold !no-underline opacity-75 hover:!underline"
+	href={href}
+>{number}</a>

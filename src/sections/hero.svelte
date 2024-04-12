@@ -10,7 +10,7 @@
 	})
 </script>
 
-<div
+<header
 	class='relative mx-auto flex max-w-[655px] flex-col justify-end px-4 pt-32 font-serif
 		xl:container xl:h-[800px] xl:pt-0'
 >
@@ -40,7 +40,7 @@
 				bg-[radial-gradient(ellipse_closest-side,_rgba(0,0,0,0.0),_rgba(0,0,0,0.15))]'
 		/>
 	</div>
-</div>
+</header>
 
 <style>
 	@keyframes avatar-animate {

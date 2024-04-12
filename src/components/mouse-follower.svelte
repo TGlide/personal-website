@@ -24,6 +24,8 @@
 	})}
 	bind:this={$ref}
 	use:portal
+	aria-hidden
+	tabindex='-1'
 >
 	<slot />
 </div>

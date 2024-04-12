@@ -1,26 +1,39 @@
 ---
-import Prose from '@components/prose.astro'
+import Socials from '@components/socials.astro'
+import type { Article } from '@content/config'
+import { formatDate } from '@helpers/date'
 import { Undo2 } from 'lucide-react'
 import Base from './base.astro'
 
 interface Props {
-	frontmatter: {
-		title: string
-		description: string
-	}
-
+  frontmatter: Article
 }
-const { frontmatter } = Astro.props
+const { frontmatter } = Astro.props;
 ---
 
 <Base title={frontmatter.title} description={frontmatter.description}>
-	<Prose class="pt-16 prose-a:!underline prose-a:transition [&_a:hover]:opacity-75">
-		<a class="inline-flex items-center gap-2 transition hover:opacity-75" href="/">
-			<Undo2 size={16} />
-			<span class="translate-y-px font-serif font-light">Back</span>
-		</a>
-		<h1 class="mb-0 mt-4">{frontmatter.title}</h1>
-		<p class="mt-2 opacity-75">{frontmatter.description}</p>
-		<slot />
-	</Prose>
+  <article
+	class="container prose prose-invert pt-16 prose-h1:font-serif prose-h2:font-serif prose-h3:font-serif
+	prose-p:font-normal prose-a:underline prose-a:transition prose-blockquote:font-serif prose-blockquote:text-2xl
+	prose-blockquote:not-italic prose-em:font-serif prose-em:font-light prose-img:rounded-xl [&_a:hover]:opacity-75"
+  >
+    <header>
+      <a
+	class="inline-flex items-center gap-2 transition hover:opacity-75"
+	href="/"
+      >
+        <Undo2 size={16} />
+        <span class="translate-y-px font-serif font-light">Back</span>
+      </a>
+      <h1 class="mb-0 mt-4">{frontmatter.title}</h1>
+      <p class="my-2 opacity-75">{frontmatter.description}</p>
+			<p class="mt-1 text-xs opacity-75">Published on {formatDate(frontmatter.publishDate)}</p>
+    </header>
+    <main>
+      <slot />
+
+			<h2>Reach out</h2>
+			<Socials />
+    </main>
+  </article>
 </Base>

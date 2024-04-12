@@ -15,6 +15,7 @@
 	"dependencies": {
 		"@astrojs/check": "^0.5.9",
 		"@astrojs/markdoc": "^0.9.3",
+		"@astrojs/mdx": "^2.2.4",
 		"@astrojs/react": "^3.1.0",
 		"@astrojs/svelte": "^5.2.0",
 		"@astrojs/tailwind": "^5.1.0",
@@ -32,6 +33,7 @@
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^2.8.3",
+		"@iconify/json": "^2.2.199",
 		"@melt-ui/pp": "^0.3.0",
 		"@melt-ui/svelte": "^0.76.0",
 		"@tailwindcss/typography": "^0.5.10",
@@ -39,6 +41,7 @@
 		"eslint-plugin-astro": "^0.32.0",
 		"eslint-plugin-svelte": "^2.35.1",
 		"eslint-plugin-tailwindcss": "^3.15.1",
-		"tailwindcss-animate": "^1.0.7"
+		"tailwindcss-animate": "^1.0.7",
+		"unplugin-icons": "^0.18.5"
 	}
 }

@@ -1,8 +1,9 @@
 # Hi, I'm Thomas
 
-- [X] Theme FUOC fix
-- [ ] React work
-- [X] Video
-- [X] Carousel on larger screens
-- [ ] Responsiveness
-- [ ] Fix mouse follow bb rect miscalculation
+This is my personal website. It's built in Astro, Tailwind, MDX, and a sprinkle of Svelte.
+
+## Ideas
+
+- [ ] Easter eggs!
+- [ ] View count on articles
+- [ ] IDK

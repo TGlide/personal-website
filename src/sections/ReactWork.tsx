@@ -3,21 +3,21 @@ import { Video } from '@components/Video'
 export function ReactWork() {
 	return (
 		<div
-			className="w-screen overflow-x-scroll snap-x snap-proximity mt-32 h-[750px] flex
+			className="mt-32 flex h-[750px] w-screen snap-x snap-proximity overflow-x-scroll
 			px-32"
 		>
 			<div className="flex gap-16">
 				<Video
-					poster="/dia-poster.png"
-					src="/dia-reel.mp4"
-					className="w-[500px] rounded-xl object-cover h-full"
+					poster="/images/dia-poster.png"
+					src="/videos/dia-reel.mp4"
+					className="h-full w-[500px] rounded-xl object-cover"
 				/>
 				<div className="mt-16">
-					<h2 className="text-8xl font-serif">Dia</h2>
-					<h3 className="text-4xl font-serif opacity-75 font-thin">
+					<h2 className="font-serif text-8xl">Dia</h2>
+					<h3 className="font-serif text-4xl font-thin opacity-75">
 						An app to empower women in their fertility journey.
 					</h3>
-					<article className="prose prose-invert mt-8">
+					<article className="prose mt-8 dark:prose-invert">
 
 						{/* Badges */}
 						<p>This was a fun one. Tons of micro-animations and interactivity</p>

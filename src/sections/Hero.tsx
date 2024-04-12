@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 export function Hero() {
 	return (
 		<div
-			className="hero h-screen relative flex flex-col justify-end container font-serif"
+			className="hero container relative flex h-[880px] flex-col justify-end font-serif"
 		>
 
 			<AnimatedText className="text-[15rem] font-black" text="Hi." tag="h1" />
@@ -17,8 +17,8 @@ export function Hero() {
 			/>
 
 			<motion.div
-				className="absolute w-[360px] top-[180px] right-[200px]
-				rounded-xl overflow-hidden"
+				className="absolute right-[200px] top-[180px] w-[360px]
+				overflow-hidden rounded-xl"
 				initial={{
 					clipPath: 'inset(50% 50% 50% 50% round 200px)',
 					rotate: 8,
@@ -37,10 +37,10 @@ export function Hero() {
 					staggerChildren: 0.05,
 				}}
 			>
-				<img src="/me.jpg" alt="Thomas's face" />
+				<img src="/images/me.jpg" alt="Thomas's face" />
 				{/* Overlay vignette */}
 				<div
-					className="absolute top-0 left-0 w-full h-full
+					className="absolute left-0 top-0 size-full
 					bg-[radial-gradient(ellipse_closest-side,_rgba(0,0,0,0.0),_rgba(0,0,0,0.15))]"
 				/>
 			</motion.div>

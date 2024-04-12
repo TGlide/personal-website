@@ -6,7 +6,9 @@ import {
   SiTailwindcss,
 } from '@icons-pack/react-simple-icons'
 import Combobox from '@components/Combobox.svelte'
-import { ReactWork } from '@sections/ReactWork';
+import { ReactWork } from '@sections/ReactWork'
+import { ThemeToggle } from '@components/ThemeToggle'
+import { Link, Test } from '@components/Link.tsx'
 ---
 
 <html lang="en" style="color-scheme: dark;">
@@ -38,17 +40,20 @@ import { ReactWork } from '@sections/ReactWork';
 
     <title>Hi, I'm Thomas!</title>
   </head>
-  <body class="bg-neutral-900 text-white !pb-32">
+  <body class="relative bg-white !pb-32 text-neutral-800 dark:bg-neutral-900 dark:text-white">
+    <ThemeToggle client:load />
+
+
     <!-- <Hero client:load /> -->
     <Hero client:load />
     <article
-	class="container prose prose-invert prose-p:font-semibold prose-em:font-light
-          prose-h1:font-serif prose-h2:font-serif prose-h3:font-serif mt-32"
+	class="container prose mt-32 dark:prose-invert prose-h1:font-serif
+          prose-h2:font-serif prose-h3:font-serif prose-p:font-semibold prose-em:font-light"
     >
       <p>
         If you're reading this, you're looking at my application for the Design
         Engineer role at
-        <SiTailwindcss className="inline-block size-5 ml-0.5 text-[#06B6D4]" /> Tailwind
+        <SiTailwindcss className="ml-0.5 inline-block size-5 text-[#06B6D4]" /> Tailwind
         Labs, and may (hopefully) be thinking of hiring me.
         <br /><br />
         In any case, it'd be rude not to introduce myself properly!
@@ -115,13 +120,14 @@ import { ReactWork } from '@sections/ReactWork';
       </p>
 
       <p>
-        I'm a <SiSvelte className="inline-block size-5 ml-0.5 text-[#FF3E00]" />
+        I'm a <SiSvelte className="ml-0.5 inline-block size-5 text-[#FF3E00]" />
         Svelte ambassador, and also the maintainer of the biggest headless library
-        for Svelte, <a href="https://melt-ui.com/" target="_blank">Melt UI</a>.
+        for Svelte,
+				<Link client:only="react" img="images/melt-ui.jpeg" href="https://melt-ui.com/">Melt UI</Link>.
       </p>
 
       <Combobox client:load />
-      <p class="opacity-75 !mt-2">
+      <p class="!mt-2 opacity-75">
         <em class="font-serif">
           A recreation of Headless UI's Combobox component in Svelte, using Melt
           UI
@@ -147,7 +153,7 @@ import { ReactWork } from '@sections/ReactWork';
 
       <p>
         I've used
-        <SiReact className="inline-block size-5 ml-0.5 text-[#61DAFB]" /> React extensively,
+        <SiReact className="ml-0.5 inline-block size-5 text-[#61DAFB]" /> React extensively,
         and I'm always tinkering with different frameworks. One of my goals is to
         build an agnostic headless library
         <em>(that also works in vanilla JS, unlike existing solutions)</em>, and

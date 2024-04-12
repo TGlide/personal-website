@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import { withEventListener } from '@withers/withEventListener'
-	import MouseFollower from './MouseFollower.svelte'
+	import MouseFollower from './mouse-follower.svelte'
 
 	export let img: string
 	let className: string

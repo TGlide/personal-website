@@ -1,8 +1,9 @@
 ---
 interface Props {
 	title?: string
+	description?: string
 }
-const { title = 'Hi. I\'m Thomas' } = Astro.props
+const { title = 'Hi. I\'m Thomas', description } = Astro.props
 ---
 <html lang="en" class="dark" style="color-scheme: dark;">
 	<head>
@@ -32,6 +33,7 @@ const { title = 'Hi. I\'m Thomas' } = Astro.props
 		<link rel="stylesheet" href="/fonts/gt-super.css" />
 
 		<title>{title}</title>
+		<meta name="description" content={description} />
 	</head>
 	<body class="relative bg-neutral-900  !pb-32 text-white">
 		<slot />

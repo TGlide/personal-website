@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import AnimatedText from '@components/AnimatedText.svelte'
+	import AnimatedText from '@components/animated-text.svelte'
 </script>
 
 <div

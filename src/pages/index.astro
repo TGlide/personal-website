@@ -1,17 +1,14 @@
 ---
-import Hero from '@sections/Hero.svelte'
-import Link from '@components/Link.svelte'
+import Hero from '@sections/hero.svelte'
+import Link from '@components/link.svelte'
 import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react'
-import Base from '@layouts/base.astro';
+import Base from '@layouts/base.astro'
+import Prose from '@components/prose.astro';
 ---
 
 <Base>
   <Hero client:load />
-  <article
-	class="container prose prose-invert mt-32 prose-h1:font-serif
-			prose-h2:font-serif prose-h3:font-serif prose-p:font-medium prose-a:no-underline
-			prose-em:font-serif prose-em:font-light"
-  >
+  <Prose>
     <h2>Who am I</h2>
 
     <p>
@@ -242,5 +239,5 @@ import Base from '@layouts/base.astro';
       <em>Psst.</em> This site is a work in progress. I'm going big into design this
       year, and re-imagining my personal brand. Expect this to change quite a lot.
     </p>
-  </article>
+  </Prose>
 </Base>

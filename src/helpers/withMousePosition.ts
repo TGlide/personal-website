@@ -37,8 +37,8 @@ export function withMousePosition() {
 			}
 
 			smoothSpeed.update(p => ({
-				x: p.x + (newSpeed.x - p.x) * 0.25,
-				y: p.y + (newSpeed.y - p.y) * 0.25,
+				x: p.x + (newSpeed.x - p.x) * 0.125,
+				y: p.y + (newSpeed.y - p.y) * 0.125,
 			}))
 
 			return newSpeed

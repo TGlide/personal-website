@@ -28,7 +28,7 @@
 </a>
 <MouseFollower
 	class='pointer-events-none'
-	offset={{ y: -140 }}
+	offset={{ y: -132 }}
 	transformOrigin='bottom'
 >
 	<div

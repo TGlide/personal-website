@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro'
 import { getCollection } from 'astro:content'
-import { PostMeta, db, eq, sql } from 'astro:db'
+import { PostMeta, db, sql } from 'astro:db'
 
 export const prerender = false
 

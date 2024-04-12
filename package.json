@@ -17,20 +17,13 @@
 		"@astrojs/cloudflare": "^10.1.0",
 		"@astrojs/db": "^0.10.3",
 		"@astrojs/mdx": "^2.2.4",
-		"@astrojs/react": "^3.1.0",
 		"@astrojs/svelte": "^5.2.0",
 		"@astrojs/tailwind": "^5.1.0",
-		"@icons-pack/react-simple-icons": "^9.4.0",
 		"astro": "^4.5.7",
-		"framer-motion": "^11.0.18",
-		"lucide-react": "^0.363.0",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
 		"sharp": "^0.33.3",
 		"svelte": "^4.2.12",
 		"tailwindcss": "^3.4.1",
-		"typescript": "^5.4.3",
-		"usehooks-ts": "^3.0.2"
+		"typescript": "^5.4.3"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^2.8.3",

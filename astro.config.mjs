@@ -1,5 +1,5 @@
 import mdx from '@astrojs/mdx'
-import react from '@astrojs/react'
+
 import svelte from '@astrojs/svelte'
 import tailwind from '@astrojs/tailwind'
 import { defineConfig } from 'astro/config'
@@ -10,7 +10,7 @@ import cloudflare from '@astrojs/cloudflare'
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind(), react(), svelte(), mdx(), db()],
+	integrations: [tailwind(), svelte(), mdx(), db()],
 	vite: {
 		plugins: [Icons({
 			compiler: 'astro',

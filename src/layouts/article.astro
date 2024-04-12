@@ -2,11 +2,11 @@
 import Socials from '@components/socials.astro'
 import type { Article } from '@content/config'
 import { formatDate } from '@helpers/date'
-import { Undo2 } from 'lucide-react'
 
 import { getViews } from '@helpers/get-views'
 import { pluralize } from '@helpers/string'
 import Base from './base.astro'
+import Undo2 from '~icons/lucide/undo-2'
 
 interface Props {
   frontmatter: Article
@@ -27,7 +27,7 @@ const views = await getViews(slug)
 	class="inline-flex items-center gap-2 transition hover:opacity-75"
 	href="/"
       >
-        <Undo2 size={16} />
+        <Undo2 class="text-base" />
         <span class="translate-y-px font-serif font-light">Back</span>
       </a>
       <h1 class="mb-0 mt-4">{frontmatter.title}</h1>

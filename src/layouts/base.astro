@@ -1,0 +1,39 @@
+---
+interface Props {
+	title?: string
+}
+const { title = 'Hi. I\'m Thomas' } = Astro.props
+---
+<html lang="en" class="dark" style="color-scheme: dark;">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://rsms.me/" />
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+		<style>
+			:root {
+				font-family: Inter, sans-serif;
+				font-feature-settings:
+					"liga" 1,
+					"calt" 1; /* fix for Chrome */
+			}
+			@supports (font-variation-settings: normal) {
+				:root {
+					font-family: InterVariable, sans-serif;
+				}
+			}
+		</style>
+
+		<link rel="stylesheet" href="/fonts/gt-super.css" />
+
+		<title>{title}</title>
+	</head>
+	<body class="relative bg-neutral-900  !pb-32 text-white">
+		<slot />
+	</body>
+</html>

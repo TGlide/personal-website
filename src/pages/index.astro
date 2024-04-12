@@ -2,270 +2,245 @@
 import Hero from '@sections/Hero.svelte'
 import Link from '@components/Link.svelte'
 import { ArrowUpRight, Github, Linkedin, Twitter } from 'lucide-react'
+import Base from '@layouts/base.astro';
 ---
-<html lang="en" class="dark" style="color-scheme: dark;">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
 
-		<!-- Fonts -->
-		<link rel="preconnect" href="https://rsms.me/" />
-		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-
-		<style>
-			:root {
-				font-family: Inter, sans-serif;
-				font-feature-settings:
-					"liga" 1,
-					"calt" 1; /* fix for Chrome */
-			}
-			@supports (font-variation-settings: normal) {
-				:root {
-					font-family: InterVariable, sans-serif;
-				}
-			}
-		</style>
-
-		<link rel="stylesheet" href="/fonts/gt-super.css" />
-
-		<title>Hi. I'm Thomas.</title>
-
-	</head>
-	<body class="relative bg-neutral-900  !pb-32 text-white">
-		<Hero client:load />
-		<article
-			class="container prose prose-invert mt-32 prose-h1:font-serif
+<Base>
+  <Hero client:load />
+  <article
+	class="container prose prose-invert mt-32 prose-h1:font-serif
 			prose-h2:font-serif prose-h3:font-serif prose-p:font-medium prose-a:no-underline
 			prose-em:font-serif prose-em:font-light"
-		>
-			<h2>Who am I</h2>
+  >
+    <h2>Who am I</h2>
 
-			<p>
-				Still figuring it out. In the meanwhile, I assume many roles and titles.
-				<br />
-				<em>Web Developer</em>, <em>OSS Maintainer</em>, <em>Designer</em>, <em>Docs Writer</em>,
-				<em>Speaker</em>, <em>etc.</em>
-				<br />
-				<br />
-				Through my passion, I've been fortunate to become a <em>Svelte ambassador</em>,
-				work with inspiring companies such as <em>V7</em>, <em>Appwrite</em>, and <em>Significa</em>,
-				and meet my heroes both online and personally.
-				<br />
-				<br />
-				I'm trying to put my work out there, both to leave my mark,
-				and to try and make world a <em>tiny</em> bit better with it. I've put some of it below.
+    <p>
+      Still figuring it out. In the meanwhile, I assume many roles and titles.
+      <br />
+      <em>Web Developer</em>, <em>OSS Maintainer</em>, <em>Designer</em>, <em>Docs Writer</em
+      >,
+      <em>Speaker</em>, <em>etc.</em>
+      <br />
+      <br />
+      Through my passion, I've been fortunate to become a <em>Svelte ambassador</em
+      >, work with inspiring companies such as <em>V7</em>, <em>Appwrite</em>,
+      and <em>Significa</em>, and meet my heroes both online and personally.
+      <br />
+      <br />
+      I'm trying to put my work out there, both to leave my mark, and to try and
+      make world a <em>tiny</em> bit better with it. I've put some of it below.
+    </p>
 
-			</p>
-
-			<h2>Projects</h2>
-			<ul>
-				<li>
-					<h3>
-						<Link
-							client:only="svelte"
-							img="images/melt-ui.png"
-							href="https://melt-ui.com/"
-							class="transition-all hover:opacity-75"
-						>
-							<span class="inline-flex items-center gap-1 ">
-								<span class="relative inline-block after:absolute after:bottom-[4px]
+    <h2>Projects</h2>
+    <ul>
+      <li>
+        <h3>
+          <Link
+	client:only="svelte"
+	img="images/melt-ui.png"
+	href="https://melt-ui.com/"
+	class="transition-all hover:opacity-75"
+          >
+            <span class="inline-flex items-center gap-1">
+              <span
+	class="relative inline-block after:absolute after:bottom-[4px]
 								after:left-1/2 after:z-[-1] after:h-1 after:w-full after:-translate-x-1/2
 								after:border-b-[6px] after:border-[hsla(34.016,91.598%,65.164%,0.5)]"
-								>
-								Melt UI
-								</span>
-								<ArrowUpRight className="size-4" />
-							</span>
-						</Link>
-					</h3>
-					<p>
-						The biggest headless UI library for Svelte, providing accessible & composable
-						component builders.
-					</p>
-				</li>
-				<li>
-					<h3>
-						<Link
-							client:only="svelte"
-							img="images/radix-svelte.png"
-							href="https://radix-svelte.com/"
-							class="transition-all hover:opacity-75"
-						>
-							<span class="inline-flex items-center gap-1 ">
-								<span class="relative inline-block after:absolute after:bottom-[4px]
+              >
+                Melt UI
+              </span>
+              <ArrowUpRight className="size-4" />
+            </span>
+          </Link>
+        </h3>
+        <p>
+          The biggest headless UI library for Svelte, providing accessible &
+          composable component builders.
+        </p>
+      </li>
+      <li>
+        <h3>
+          <Link
+	client:only="svelte"
+	img="images/radix-svelte.png"
+	href="https://radix-svelte.com/"
+	class="transition-all hover:opacity-75"
+          >
+            <span class="inline-flex items-center gap-1">
+              <span
+	class="relative inline-block after:absolute after:bottom-[4px]
 								after:left-1/2 after:z-[-1] after:h-1 after:w-full after:-translate-x-1/2
 								after:border-b-[6px] after:border-[hsla(14.864,100%,49.771%,0.5)]"
-								>
-								Radix Svelte
-								</span>
-								<ArrowUpRight className="size-4" />
-							</span>
-						</Link>
-					</h3>
-					<p>
-						The original port of Radix UI for Svelte. Won 3rd place at SvelteHack.<br />
-						The work done here later inspired Melt UI.
-					</p>
-				</li>
-				<li>
-					<h3>
-						<Link
-							client:only="svelte"
-							img="images/novel-svelte.png"
-							href="https://novel-svelte-thomasglopes.vercel.app/"
-							class="transition-all hover:opacity-75"
-						>
-							<span class="inline-flex items-center gap-1 ">
-								<span class="relative inline-block after:absolute after:bottom-[4px]
+              >
+                Radix Svelte
+              </span>
+              <ArrowUpRight className="size-4" />
+            </span>
+          </Link>
+        </h3>
+        <p>
+          The original port of Radix UI for Svelte. Won 3rd place at SvelteHack.<br />
+          The work done here later inspired Melt UI.
+        </p>
+      </li>
+      <li>
+        <h3>
+          <Link
+	client:only="svelte"
+	img="images/novel-svelte.png"
+	href="https://novel-svelte-thomasglopes.vercel.app/"
+	class="transition-all hover:opacity-75"
+          >
+            <span class="inline-flex items-center gap-1">
+              <span
+	class="relative inline-block after:absolute after:bottom-[4px]
 								after:left-1/2 after:z-[-1] after:h-1 after:w-full after:-translate-x-1/2
 								after:border-b-[6px] after:border-[hsla(0,0%,50%,0.5)]"
-								>
-									Novel Svelte
-								</span>
-								<ArrowUpRight className="size-4" />
-							</span>
-						</Link>
-					</h3>
-					<p>
-						A port of Steven Tey's library, Novel, to Svelte. It's a Notion-style
-						WYSIWYG editor, with AI-powered features.
-					</p>
-				</li>
-			</ul>
+              >
+                Novel Svelte
+              </span>
+              <ArrowUpRight className="size-4" />
+            </span>
+          </Link>
+        </h3>
+        <p>
+          A port of Steven Tey's library, Novel, to Svelte. It's a Notion-style
+          WYSIWYG editor, with AI-powered features.
+        </p>
+      </li>
+    </ul>
 
-			<h2>Experiments & Toys</h2>
+    <h2>Experiments & Toys</h2>
 
-			<ul>
-				<li>
-					<a
-						class="border-b-2 border-white font-serif font-light leading-none transition hover:opacity-75"
-						href="https://svelte-radial-menu.thomasglopes.com/"
-					>
-						Radial Menu
-					</a>
-					<p class="text-sm">
-						Radial Menu Experiment based on Rauno's Freiberg work, built in Svelte.
-						<br />
-						One of my first public experiments, and a fun one to build.
-						<br />
-						<br />
-						Was awesome to see Rauno himself notice it!
-					</p>
-				</li>
-				<li>
-					<a
-						class="border-b-2 border-white font-serif font-light leading-none transition hover:opacity-75"
-						href="https://codeverter.vercel.app/"
-					>
-						Codeverter
-					</a>
-					<p class="text-sm">
-						An early insight into how AI can power code translation.
-						<br />
-						Built to learn how to integrate LLMs into the web.
-						<br />
-						<br />
-						Proud that this got shared by Guillermo Rauch!
-					</p>
-				</li>
-			</ul>
+    <ul>
+      <li>
+        <a
+	class="border-b-2 border-white font-serif font-light leading-none transition hover:opacity-75"
+	href="https://svelte-radial-menu.thomasglopes.com/"
+        >
+          Radial Menu
+        </a>
+        <p class="text-sm">
+          Radial Menu Experiment based on Rauno's Freiberg work, built in
+          Svelte.
+          <br />
+          One of my first public experiments, and a fun one to build.
+          <br />
+          <br />
+          Was awesome to see Rauno himself notice it!
+        </p>
+      </li>
+      <li>
+        <a
+	class="border-b-2 border-white font-serif font-light leading-none transition hover:opacity-75"
+	href="https://codeverter.vercel.app/"
+        >
+          Codeverter
+        </a>
+        <p class="text-sm">
+          An early insight into how AI can power code translation.
+          <br />
+          Built to learn how to integrate LLMs into the web.
+          <br />
+          <br />
+          Proud that this got shared by Guillermo Rauch!
+        </p>
+      </li>
+    </ul>
 
-			<h2>Work experience</h2>
+    <h2>Work experience</h2>
 
-			<ul>
-				<li>
-					Currently at <em>V7</em>, I'm working on a <em>super-duper-secret</em> project that
-					acts as a natural interface to AI that you'll be astonished wasn't made sooner.
-					<br />
-					I work on the main UI of said project, sprinkling in a lot of love into every crevice,
-					crafting beautiful interfaces with natural animations and interactions.
-				</li>
-				<li>
-					At <em>Appwrite</em>, I worked a lot on the <em>Console</em>, but my presence was
-					more felt within the more flashy sections seen on the <em>Website</em>, the
-					<em>init</em> launch week, and the <em>marketing campaigns</em>.
-					<br />
-					<br />
-					It also signaled the start of my journey into <em>Open Source</em>. I got to
-					interact with its expansive <em>community</em>, and directly contribute to OSS
-					for a living. It <em>inspired</em> me to create my own projects, with great success so far.
-				</li>
-				<li>
-					At <em>Significa</em>, I acted a <em>Frontend Developer</em> working on a variety of
-					projects, from <em>websites</em> to <em>web apps</em>, <em>mobile apps</em>,
-					and even <em>design systems</em>. I also mentored a lot of the junior developers.
-					<br />
-					<br />
-					I learned a ton about <em>animation</em> and <em>design</em> there. Their website
-					has tons of case studies in projects I worked on, such as <em>Dia</em>, <em>Kota</em>
-					and <em>Cimple</em>.
-				</li>
-				<li>
-					At <em>Stone Pagamentos</em>, I started my career into the <em>www</em> sphere.
-					I learned quickly, developing products that the support team would use to
-					serve clients throughout all of <em>Brazil</em>.
-					<br />
-					<br />
-					The quick page was <em>fun</em>, <em>demanding</em>, and <em>energetic</em>.
-					To this day I still miss being able to directly request feedback from the end-user,
-					since they were my colleagues.
-				</li>
-				<li>I've done some <em>freelancing</em> as well, but nothing of major note.</li>
-			</ul>
+    <ul>
+      <li>
+        Currently at <em>V7</em>, I'm working on a <em>super-duper-secret</em> project
+        that acts as a natural interface to AI that you'll be astonished wasn't made
+        sooner.
+        <br />
+        I work on the main UI of said project, sprinkling in a lot of love into every
+        crevice, crafting beautiful interfaces with natural animations and interactions.
+      </li>
+      <li>
+        At <em>Appwrite</em>, I worked a lot on the <em>Console</em>, but my
+        presence was more felt within the more flashy sections seen on the <em>Website</em
+        >, the
+        <em>init</em> launch week, and the <em>marketing campaigns</em>.
+        <br />
+        <br />
+        It also signaled the start of my journey into <em>Open Source</em>. I
+        got to interact with its expansive <em>community</em>, and directly
+        contribute to OSS for a living. It <em>inspired</em> me to create my own
+        projects, with great success so far.
+      </li>
+      <li>
+        At <em>Significa</em>, I acted a <em>Frontend Developer</em> working on a
+        variety of projects, from <em>websites</em> to <em>web apps</em>, <em>mobile apps</em
+        >, and even <em>design systems</em>. I also mentored a lot of the junior
+        developers.
+        <br />
+        <br />
+        I learned a ton about <em>animation</em> and <em>design</em> there. Their
+        website has tons of case studies in projects I worked on, such as <em>Dia</em
+        >, <em>Kota</em>
+        and <em>Cimple</em>.
+      </li>
+      <li>
+        At <em>Stone Pagamentos</em>, I started my career into the <em>www</em> sphere.
+        I learned quickly, developing products that the support team would use to
+        serve clients throughout all of <em>Brazil</em>.
+        <br />
+        <br />
+        The quick page was <em>fun</em>, <em>demanding</em>, and <em>energetic</em
+        >. To this day I still miss being able to directly request feedback from
+        the end-user, since they were my colleagues.
+      </li>
+      <li>
+        I've done some <em>freelancing</em> as well, but nothing of major note.
+      </li>
+    </ul>
 
-			<h2>Socials</h2>
+    <h2>Socials</h2>
 
-			<p>
-				You can find me on
-				<a
-					class="my-0 ml-1 mr-0.5 inline-flex translate-y-0.5 items-center font-serif
-					font-light  underline transition hover:opacity-75"
-					href="https://twitter.com/thomasglopes"
-					target="_blank"
-				>
-						<Twitter className="size-4 text-[#1D9BF0]" />
-						<span class="ml-1 border-b-2 border-[#1D9BF0] leading-none">
-							Twitter
-						</span>
-					</a>,
-					<a
-						class="my-0 mr-0.5 inline-flex translate-y-0.5 items-center font-serif
-						font-light  underline transition hover:opacity-75"
-						href="https://github.com/tglide"
-						target="_blank"
-					>
-					<Github className="size-4 text-gray-500" />
-					<span class="ml-1 border-b-2 border-gray-500 leading-none">GitHub</span>
-				</a>
-				<!-- Linkedin -->
-				or
-				<a
-					class="my-0 ml-1 mr-0.5 inline-flex translate-y-0.5 items-center font-serif
+    <p>
+      You can find me on
+      <a
+	class="my-0 ml-1 mr-0.5 inline-flex translate-y-0.5 items-center font-serif
+					font-light underline transition hover:opacity-75"
+	href="https://twitter.com/thomasglopes"
+	target="_blank"
+      >
+        <Twitter className="size-4 text-[#1D9BF0]" />
+        <span class="ml-1 border-b-2 border-[#1D9BF0] leading-none">
+          Twitter
+        </span>
+      </a>,
+      <a
+	class="my-0 mr-0.5 inline-flex translate-y-0.5 items-center font-serif
+						font-light underline transition hover:opacity-75"
+	href="https://github.com/tglide"
+	target="_blank"
+      >
+        <Github className="size-4 text-gray-500" />
+        <span class="ml-1 border-b-2 border-gray-500 leading-none">GitHub</span>
+      </a>
+      <!-- Linkedin -->
+      or
+      <a
+	class="my-0 ml-1 mr-0.5 inline-flex translate-y-0.5 items-center font-serif
 					font-light transition hover:opacity-75"
-					href="https://www.linkedin.com/in/thomas-gl/"
-					target="_blank"
-				>
-					<Linkedin className="size-4 text-[#0B66C2]" />
-					<span class="ml-1 border-b-2 border-[#0B66C2] leading-none">LinkedIn</span>
-				</a>.
-			</p>
+	href="https://www.linkedin.com/in/thomas-gl/"
+	target="_blank"
+      >
+        <Linkedin className="size-4 text-[#0B66C2]" />
+        <span class="ml-1 border-b-2 border-[#0B66C2] leading-none">LinkedIn</span
+        >
+      </a>.
+    </p>
 
-			<h2>Extra</h2>
+    <h2>Extra</h2>
 
-			<p>
-				<em>Psst.</em> This site is a work in progress. I'm going big into design this year,
-				and re-imagining my personal brand. Expect this to change quite a lot.
-				<br />
-				<br />
-				Also, this has a lot of <em>React</em> in it, while being built in <em>Astro</em>.
-				<br />
-				Either I change it to <em>Svelte</em>, a mix of frameworks, or just pure <em>Vanilla</em>.
-
-
-			</p>
-
-
-	</body>
-</html>
+    <p>
+      <em>Psst.</em> This site is a work in progress. I'm going big into design this
+      year, and re-imagining my personal brand. Expect this to change quite a lot.
+    </p>
+  </article>
+</Base>

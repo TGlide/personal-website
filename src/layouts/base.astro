@@ -13,8 +13,9 @@ const { title = 'Hi. I\'m Thomas', description } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- Fonts -->
-		<link rel="preconnect" href="https://rsms.me/" />
-		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+		<link rel="preload" href="https://rsms.me/inter/inter.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+		<noscript><link rel="stylesheet" href="https://rsms.me/inter/inter.css"></noscript>
+
 
 		<style>
 			:root {

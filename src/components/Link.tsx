@@ -24,6 +24,7 @@ export function Link({ img, className, children, href }: LinkProps) {
 				className={className}
 				onMouseMove={() => setIsHovering(true)}
 				onMouseLeave={() => setIsHovering(false)}
+				onClick={() => setIsHovering(false)}
 				href={href}
 				target="_blank"
 				ref={el}

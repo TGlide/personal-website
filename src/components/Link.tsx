@@ -30,9 +30,9 @@ export function Link({ img, className, children, href }: LinkProps) {
 			>
 				{children}
 			</a>
-			<MouseFollower className="pointer-events-none" offset={{ y: -90 }} transformOrigin="bottom">
+			<MouseFollower className="pointer-events-none" offset={{ y: -160 }} transformOrigin="bottom">
 				<motion.div
-					className={`pointer-events-none h-[140px] w-[200px]
+					className={`pointer-events-none h-[280px] w-[400px]
 					overflow-hidden rounded-xl border border-neutral-200 bg-white p-1.5 shadow-xl 
 					transition-opacity duration-300 dark:border-neutral-600 dark:bg-neutral-800`}
 

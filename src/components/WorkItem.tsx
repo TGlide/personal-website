@@ -104,7 +104,7 @@ export function WorkItem({
 									className="w-screen rounded-xl outline-none"
 									src={props.video.src}
 									controls
-									poster={props.video.poster}
+									autoPlay
 								/>
 
 							</Dialog.Content>

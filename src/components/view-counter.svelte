@@ -1,7 +1,6 @@
 <script lang='ts'>
 	import { pluralize } from '@helpers/string'
 	import { onMount } from 'svelte'
-	import { fade } from 'svelte/transition'
 
 	export let slug: string | undefined
 

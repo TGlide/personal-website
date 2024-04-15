@@ -37,11 +37,20 @@
 
 		return { update }
 	}
+
+	const blur = (_node: HTMLElement) => {
+		return {
+			delay: 150,
+			duration: 500,
+			css: (t: number, u: number) =>
+				`filter: blur(${u * 3}px); opacity: ${t * 1}`,
+		}
+	}
 </script>
 
 <div class='mt-2 text-xs opacity-75'>
 	{#if views}
-		<div class='wrapper' transition:fade>
+		<div class='wrapper' transition:blur>
 			{#each views?.toString() as char, index (index)}
 				{#if Number.isNaN(Number(char))}
 					<span>{char}</span>
@@ -55,7 +64,7 @@
 				{/if}
 			{/each}
 		</div>
-		<span transition:fade>{pluralize('view', views)}</span>
+		<span transition:blur>{pluralize('view', views)}</span>
 	{:else}
 		<!-- Just to avoid CLS :) -->
 		<span aria-hidden class='opacity-0 select-none'>JOHN CEEEEENA</span>
@@ -66,6 +75,25 @@
   .wrapper {
     display: inline-flex;
     overflow: hidden;
+    position: relative;
+    padding-block: 10px;
+		margin-block: -10px;
+  }
+
+  .wrapper::after {
+    /* gradient */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      #171717,
+      #171717 27.5%,
+      transparent 35%,
+      transparent 65%,
+      #171717 72.5%,
+      #171717
+    );
   }
 
   .list {
@@ -75,7 +103,7 @@
     height: 0.75rem;
     line-height: 0.75rem;
     transition:
-      transform 0.5s 100ms ease,
+      transform 1s 0ms ease,
       width 0s;
 
     list-style: none;

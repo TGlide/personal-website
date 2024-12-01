@@ -33,11 +33,11 @@
 >
 	<div
 		class='pointer-events-none h-[240px] w-[400px]
-			overflow-hidden rounded-xl border  border-neutral-600 bg-neutral-800
-			p-1.5 shadow-xl transition-all duration-300
+			overflow-hidden rounded-xl bg-neutral-800
+			p-1.5 shadow-xl transition-all ease-out-cubic
 			[&_img]:size-full [&_img]:rounded-lg [&_img]:object-cover'
 		style:clip-path={isHovering ? 'inset(0% 0% 0% 0% round 10px)' : 'inset(90% 50% 10% 50% round 10px)'}
-		style:transition-duration={isHovering ? '0.25s' : '0.125s'}
+		style:transition-duration={isHovering ? '300ms' : '300ms'}
 		style:transition-delay={isHovering ? '0.05s' : '0s'}
 
 	>

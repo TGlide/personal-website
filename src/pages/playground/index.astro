@@ -1,0 +1,55 @@
+---
+import Link from '@components/link.svelte'
+import Base from '@layouts/base.astro'
+import { Image } from 'astro:assets'
+import MeltImg from '@images/melt-ui.png'
+import Undo2 from '~icons/lucide/undo-2'
+import ArrowUpRight from '~icons/lucide/arrow-up-right'
+---
+
+<Base>
+	<article
+		class="container prose prose-invert pt-16 prose-h1:font-serif prose-h2:font-serif prose-h3:font-serif
+		prose-p:font-normal prose-a:underline prose-a:transition prose-blockquote:font-serif prose-blockquote:text-2xl
+		prose-blockquote:not-italic prose-em:font-serif prose-em:font-light prose-img:rounded-xl [&_a:hover]:opacity-75"
+	>
+		<header>
+			<a
+				class="inline-flex items-center gap-2 transition hover:opacity-75"
+				href="/"
+			>
+				<Undo2 class="text-base" />
+				<span class="translate-y-px font-serif font-light">Back</span>
+			</a>
+		</header>
+		<main>
+      <h1 class="mb-0 mt-4">Playground</h1>
+			<p class="my-2 opacity-75">Just some fun stuff I'm messing around with.</p>
+
+			<div aria-hidden class="my-16"></div>
+			<div class="grid h-60 place-items-center rounded-lg border border-neutral-800 bg-neutral-950 text-center">
+				<Link
+					client:load
+					href="https://melt-ui.com/"
+					class="transition-all hover:opacity-75"
+				>
+					<span class="inline-flex items-center gap-1">
+						<span
+							class="relative inline-block after:absolute after:bottom-[4px]"
+						>
+							Hover me
+						</span>
+						<ArrowUpRight class="size-4" />
+					</span>
+					<Image slot="img" src={MeltImg} alt="" />
+				</Link>
+			</div>
+			<div class="text-right text-neutral-300">
+				<p class="mb-0 mt-2 font-serif !font-light italic">wobbly link preview</p>
+				<p class="-mt-1 font-serif !font-light italic">mar 2024</p>
+			</div>
+		</main>
+	</article>
+</Base>
+
+

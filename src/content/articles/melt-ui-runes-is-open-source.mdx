@@ -1,0 +1,102 @@
+---
+title: Melt UI Runes is now Open Source
+description: Finally! But we're also not done yet.
+publishDate: 2024-12-24
+---
+
+After a long wait, the Runes version of Melt UI is now public! You can check out the new docs out at [next.melt-ui.com](https://next.melt-ui.com).
+
+There's tons of exciting things about this release.
+
+## Runes compatibility
+
+This is a bit obvious, but it's worth mentioning because of the DX upgrade that comes with it.
+
+Before, to sync with outside state, you'd need some really complex workarounds. Now?
+
+```svelte
+<script lang="ts">
+  import { Toggle } from "melt/builders";
+
+  let value = $state(false);
+
+  const toggle = new Toggle({
+    value: () => value,
+    onValueChange: (v) => (value = v),
+  });
+</script>
+```
+
+Thank you Svelte team.
+
+## Builders & components
+
+If the builder API is too complex for you, you now have a simplified component API. It gives you access
+to the same instance a builder would!
+
+The benefit? You can use `bind`, and nest these components inside `#each`, `#if`, or any other type of block.
+
+```svelte
+<script lang="ts">
+  import { Toggle } from "melt/components";
+
+  let value = $state(false)
+</script>
+
+<Toggle bind:value>
+  {#snippet children(toggle)}
+    <button {...toggle.trigger}>
+      {toggle.value ? "On" : "Off"}
+    </button>
+  {/snippet}
+</Toggle>
+```
+
+## Component upgrades
+
+Each individual component is being incrementally upgraded as well.
+
+- PIN Input has better keyboard navigation;
+- Value props are now used sensibly (no more arrays for single `value` props!), while also keeping sensible types;
+- Popover uses the `popover` attribute, without the need for portalling, and native nested popover support
+- etc.
+
+## Docs upgrade
+
+The docs are *much* better.
+
+We now have auto-generated API reference, ensuring that it's always up to date.
+
+It should also be much snappier, replacing my hacky docs solution with Astro Starlight.
+
+It's still a little bit barebones yet, so don't get *too* excited just yet.
+
+## There's something missing...
+
+There's a glaring omisison though. Where are all of the other components?
+
+I'm working on it! Quite slowly though. While other libraries have been faster to update, it hasn't been too easy for me, which is also something I wanted to address.
+
+Open-source puts a ton of pressure on you. You're happilly building your passion project, but suddenly tons of people start using it! And now you want to live up to their expectations.
+
+But with a full-time job, moving places, trying to make time for loved ones, etc, it gets hard! And suddenly the passion project becomes an obligation, getting harder to find the motivation for it.
+
+
+Don't take this the wrong way though. The only reason I'm mentioning this is because I want to ask for some *patience*.
+
+I want to keep working in Melt, but I want to also respect my limited time. I want to be able to work on other projects, pursue other hobbies, while keeping Melt alive and kicking, better than ever.
+
+This is another reason why I'm open-sourcing the library now, even with a few missing pieces. I'm hoping to get more feedback, maybe some active contributions, to help speed up its development.
+
+## Closing notes
+
+I want to thank you for all your support, and reading through this.
+
+I would like to thank Huntabyte, Adrian (CokaKoala) and Abdelrahman for helping me throughout all of Melt's journey.
+
+And also, a big thanks to all of the people who worked on Svelte. It keeps getting better, and improving the web for us all. Runes are an amazing addition, and it took a lot of effort (and braveness!) to get it to us.
+
+I hope you all enjoy Melt and its next steps. Thank you!
+
+
+

@@ -175,7 +175,7 @@ const articles = await getCollection('articles')
     <h2>Articles/Ramblings</h2>
 			<ul>
 				{
-					articles.map(article => (
+					articles.toReversed().map(article => (
 						<li>
 							<a
 								href={`/articles/${article.slug}`}

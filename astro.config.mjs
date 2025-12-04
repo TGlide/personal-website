@@ -1,10 +1,10 @@
 import mdx from "@astrojs/mdx";
 
+import db from "@astrojs/db";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 import Icons from "unplugin-icons/vite";
-import db from "@astrojs/db";
 
 import cloudflare from "@astrojs/cloudflare";
 
@@ -18,7 +18,7 @@ export default defineConfig({
       }),
     ],
   },
-  output: "server",
+  output: "static",
   adapter: cloudflare({
     imageService: "compile",
   }),

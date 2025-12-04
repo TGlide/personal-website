@@ -13,30 +13,30 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.9",
-    "@astrojs/cloudflare": "^10.1.0",
-    "@astrojs/db": "^0.10.3",
-    "@astrojs/mdx": "^2.2.4",
-    "@astrojs/svelte": "^5.2.0",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.5.7",
-    "sharp": "^0.33.3",
-    "svelte": "^4.2.12",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.3"
+    "sharp": "^0.34.5",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.8.3",
-    "@iconify/json": "^2.2.199",
-    "@melt-ui/pp": "^0.3.0",
-    "@melt-ui/svelte": "^0.76.0",
-    "@tailwindcss/typography": "^0.5.10",
-    "eslint": "^8.57.0",
-    "eslint-plugin-astro": "^0.32.0",
-    "eslint-plugin-svelte": "^2.35.1",
-    "eslint-plugin-tailwindcss": "^3.15.1",
+    "@antfu/eslint-config": "^6.4.1",
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/cloudflare": "^10.4.2",
+    "@astrojs/db": "^0.10.7",
+    "@astrojs/mdx": "^2.3.1",
+    "@astrojs/svelte": "^5.7.3",
+    "@astrojs/tailwind": "^5.1.5",
+    "@iconify/json": "^2.2.414",
+    "@melt-ui/pp": "^0.3.2",
+    "@melt-ui/svelte": "^0.86.6",
+    "@tailwindcss/typography": "^0.5.19",
+    "astro": "^4.16.19",
+    "eslint": "^9.39.1",
+    "eslint-plugin-astro": "^1.5.0",
+    "eslint-plugin-svelte": "^3.13.0",
+    "eslint-plugin-tailwindcss": "^3.18.2",
+    "svelte": "^4.2.20",
+    "tailwindcss": "^3.4.18",
     "tailwindcss-animate": "^1.0.7",
-    "unplugin-icons": "^0.18.5"
+    "unplugin-icons": "^22.5.0"
   },
   "engines": {
     "node": ">=20.0.0"

@@ -8,6 +8,7 @@ import Socials from '@components/socials.astro'
 import MeltImg from '@images/melt-ui.png'
 import NovelImg from '@images/novel-svelte.png'
 import RadixImg from '@images/radix-svelte.png'
+import RunedImg from '@images/runed.png'
 import { getCollection } from 'astro:content'
 import me from '@images/me.jpg'
 import ArrowUpRight from '~icons/lucide/arrow-up-right'
@@ -50,7 +51,7 @@ const articles = await getCollection('articles')
         <h3>
           <Link
 	client:load
-	href="https://melt-ui.com/"
+	href="https://next.melt-ui.com/"
 	class="transition-all hover:opacity-75"
           >
             <span class="inline-flex items-center gap-1">
@@ -70,6 +71,30 @@ const articles = await getCollection('articles')
           The biggest headless UI library for Svelte, providing accessible &
           composable component builders.
         </p>
+      </li>
+      <li>
+        <h3>
+          <Link
+	client:load
+	href="https://runed.dev/"
+	class="transition-all hover:opacity-75"
+          >
+            <span class="inline-flex items-center gap-1">
+              <span
+	class="relative inline-block after:absolute after:bottom-[4px]
+									after:left-1/2 after:z-[-1] after:h-1 after:w-full after:-translate-x-1/2
+									after:border-b-[6px] after:border-[hsla(14.864,100%,49.771%,0.5)]"
+              >
+								Runed
+              </span>
+              <ArrowUpRight class="size-4" />
+            </span>
+            <Image slot="img" src={RadixImg} alt="" />
+          </Link>
+        </h3>
+        <p>
+					The biggest utility library for Svelte 5.
+				</p>
       </li>
       <li>
         <h3>

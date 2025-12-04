@@ -6,8 +6,6 @@ import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 import Icons from "unplugin-icons/vite";
 
-import cloudflare from "@astrojs/cloudflare";
-
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), svelte(), mdx(), db()],
@@ -18,8 +16,4 @@ export default defineConfig({
       }),
     ],
   },
-  output: "static",
-  adapter: cloudflare({
-    imageService: "compile",
-  }),
 });

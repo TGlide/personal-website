@@ -19,7 +19,6 @@
   "devDependencies": {
     "@antfu/eslint-config": "^6.4.1",
     "@astrojs/check": "^0.5.10",
-    "@astrojs/cloudflare": "^10.4.2",
     "@astrojs/db": "^0.10.7",
     "@astrojs/mdx": "^2.3.1",
     "@astrojs/svelte": "^5.7.3",

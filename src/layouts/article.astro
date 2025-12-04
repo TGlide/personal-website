@@ -1,6 +1,5 @@
 ---
 import Socials from '@components/socials.astro'
-import ViewCounter from '@components/view-counter.svelte'
 import type { Article } from '@content/config'
 import { formatDate } from '@helpers/date'
 
@@ -11,7 +10,6 @@ interface Props {
   frontmatter: Article
 }
 const { frontmatter } = Astro.props
-const slug = Astro.params.slug
 ---
 
 <Base title={frontmatter.title} description={frontmatter.description}>
@@ -31,7 +29,6 @@ const slug = Astro.params.slug
       <h1 class="mb-0 mt-4">{frontmatter.title}</h1>
       <p class="my-2 opacity-75">{frontmatter.description}</p>
 			<p class="mb-0 mt-1 text-xs opacity-75">Published on {formatDate(frontmatter.publishDate)}</p>
-			<ViewCounter client:load slug={slug} />
     </header>
     <main>
       <slot />

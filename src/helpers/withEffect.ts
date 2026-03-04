@@ -1,11 +1,9 @@
-import type { Stores, StoresValues } from 'svelte/store'
-import { derived } from 'svelte/store'
-
-import { onDestroy, onMount } from 'svelte'
+import { derived, type Readable } from 'svelte/store'
+import { onDestroy } from 'svelte'
 
 function noop() {}
 
-function safeOnDestroy(fn: (...args: unknown[]) => unknown) {
+function safeOnDestroy(fn: () => void) {
 	try {
 		onDestroy(fn)
 	}
@@ -17,22 +15,18 @@ function safeOnDestroy(fn: (...args: unknown[]) => unknown) {
 /**
  * A utility function that creates an effect from a set of stores and a function.
  * The effect is automatically cleaned up when the component is destroyed.
- *
- * @template S - The type of the stores object
- * @param stores - The stores object to derive from
- * @param fn - The function to run when the stores change
- * @returns A function that can be used to unsubscribe the effect
  */
-export function withEffect<S extends Stores>(
-	stores: S,
-	fn: (values: StoresValues<S>) => (() => void) | void,
+export function withEffect<T>(
+	stores: Readable<T> | Readable<unknown>[],
+	fn: (values: T extends unknown[] ? T : T) => (() => void) | void,
 ): () => void {
 	let cb: (() => void) | void
 
 	// Create a derived store that contains the stores object and an onUnsubscribe function
-	const destroy = derived(stores, (stores) => {
+	const destroy = derived(stores as Readable<unknown>, (values) => {
 		cb?.()
-		cb = fn(stores)
+		// eslint-disable-next-line ts/no-explicit-any
+		cb = fn(values as any)
 	}).subscribe(noop)
 
 	const unsub = () => {
